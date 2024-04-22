@@ -12,7 +12,7 @@ export interface Product {
   MiPrecio: string,
   VentasAprox: string,
   Link: string,
-  REAL : string,
+  REAL: string,
   Vendidos: string,
   Disponible: string,
   SellRate: string,

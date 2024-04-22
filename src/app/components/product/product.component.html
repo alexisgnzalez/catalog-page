@@ -1,1 +1,8 @@
-<div>{{ product() }}</div>
+<mat-card class="product-card">
+  <img mat-card-image [src]="product().image" alt="Photo of product">
+  <mat-card-content>
+    <div class="name">{{ product().Nombre }}</div>
+    <div class="availability" [ngClass]="{ outOfStock: convertToNumber(product().Disponible) <= 0 }">{{ convertToNumber(product().Disponible) <= 0 ? 'Agotado 🫥' : 'Disponible'}}</div>
+    <div class="price">{{ product().REAL | currency }}</div>
+  </mat-card-content>
+</mat-card>
