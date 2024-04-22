@@ -1,0 +1,6 @@
+@for (product of products; track product.ID) {
+  <app-product [product]="product">
+  </app-product>
+} @empty {
+  Empty list of users
+}

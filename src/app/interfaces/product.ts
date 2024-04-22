@@ -1,0 +1,20 @@
+export interface Product {
+  ID: string,
+  Nombre: string,
+  PrecioTotalAlCosto: string,
+  Cantidad: string,
+  PrecioUnitarioAlCosto: string,
+  PrecioConEnvioUNITARIO: string,
+  PrecioConEnvioTOTAL: string,
+  PrecioSugerido: string,
+  EscalaDePrecio: string,
+  PrecioSegunPesoVolumen: string,
+  MiPrecio: string,
+  VentasAprox: string,
+  Link: string,
+  REAL : string,
+  Vendidos: string,
+  Disponible: string,
+  SellRate: string,
+  image: string
+}
