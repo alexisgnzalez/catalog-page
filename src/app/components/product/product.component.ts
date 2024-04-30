@@ -15,6 +15,7 @@ export class ProductComponent {
   product = input.required<Product>();
 
   convertToNumber(value: string): number {
+    console.log(Number(value));
     return Number(value);
   }
 }

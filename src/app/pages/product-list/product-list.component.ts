@@ -17,35 +17,18 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
     this.httpCaller.getProducts().subscribe(products => {
-      console.log(products);
       this.products.set(products);
+    /*products.forEach(product => {
+        setInterval(() => {
+          this.products.set([...this.products(), product]);
+        }, 1000);
+      }) */
     })
   }
 
-  getEmptyProduct() {
-    let products: Product[] = [];
-    let product: Product = {
-      ID: 'string',
-      Nombre: 'string',
-      PrecioTotalAlCosto: 'string',
-      Cantidad: 'string',
-      PrecioUnitarioAlCosto: 'string',
-      PrecioConEnvioUNITARIO: 'string',
-      PrecioConEnvioTOTAL: 'string',
-      PrecioSugerido: 'string',
-      EscalaDePrecio: 'string',
-      PrecioSegunPesoVolumen: 'string',
-      MiPrecio: 'string',
-      VentasAprox: 'string',
-      Link: 'string',
-      REAL : 'string',
-      Vendidos: 'string',
-      Disponible: 'string',
-      SellRate: 'string',
-      image: 'string'
-    }
-    for (let i = 0; i < 10; i++) {
-      products.push(product);
-    }
+  effect() {
+    console.log(this.products());
   }
+
+  
 }
