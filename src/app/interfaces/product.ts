@@ -16,5 +16,28 @@ export interface Product {
   Vendidos: string,
   Disponible: string,
   SellRate: string,
-  image: string
+  image: string,
+  Discount: string
+}
+
+export interface ProductFormatted {
+  ID: string,
+  Nombre: string,
+  PrecioTotalAlCosto: number,
+  Cantidad: number,
+  PrecioUnitarioAlCosto: number,
+  PrecioConEnvioUNITARIO: number,
+  PrecioConEnvioTOTAL: number,
+  PrecioSugerido: number,
+  EscalaDePrecio: string,
+  PrecioSegunPesoVolumen: number,
+  MiPrecio: number,
+  VentasAprox: number,
+  Link: string,
+  REAL: number,
+  Vendidos: number,
+  Disponible: number,
+  SellRate: number,
+  image: string,
+  Discount: number
 }

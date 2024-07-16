@@ -1,8 +1,19 @@
 <mat-card class="product-card">
-  <img mat-card-image [src]="product().image" alt="Photo of product">
+  <img mat-card-image [ngSrc]="product().image" alt="Photo of product" width="230" height="230">
+  <div class="discountLabel" *ngIf="!(product().Disponible <= 0) && product().Discount > 0">{{ (product().Discount / 100 | percent) + 'off'}}</div>
   <mat-card-content>
     <div class="name">{{ product().Nombre }}</div>
-    <div class="availability" [ngClass]="{ outOfStock: convertToNumber(product().Disponible) <= 0 }">{{ convertToNumber(product().Disponible) <= 0 ? 'Agotado 🫥' : 'Disponible'}}</div>
-    <div class="price">{{ convertToNumber(product().REAL) | currency }}</div>
+    <div class="availability" [class.outOfStock]="product().Disponible <= 0">
+      {{ product().Disponible <= 0 ? 'Agotado 🫥' : 'Disponible'}}
+    </div>
+    <div class="price">
+      <span [class.crossOut]="!(product().Disponible <= 0) && product().Discount > 0">
+        {{ product().REAL | currency }}
+      </span>
+
+      <span class="discount" *ngIf="!(product().Disponible <= 0) && product().Discount > 0">
+        {{ discount() | currency }}
+      </span>
+    </div>
   </mat-card-content>
 </mat-card>
